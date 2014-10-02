@@ -1,0 +1,36 @@
+" http://www.linuxdocs.org/HOWTOs/Vim-HOWTO-3.html
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Courier\ 10\ Pitch\ 13
+  elseif has("gui_photon")
+    set guifont=Courier\ 10\ Pitch:s13
+  elseif has("gui_kde")
+    set guifont=Courier\ 10\ Pitch/13/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Courier_10_Pitch:h13:cDEFAULT
+  endif
+endif
+
+"Map to visual lines instead of physical lines
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+
+" Set the color scheme
+colorscheme default 
+
+"Always view status bar
+set laststatus=2
+
+"Default working directory to current file
+set autochdir
+
+" Automatically choose indentation based on filetype
+filetype plugin indent on
+
+" Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
+:imap <M-j> <Esc>j
+:imap <M-k> <Esc>k
+:imap <M-l> <Esc>l
+" Note that alt-h already is mapped to the help menu, so we can't fix it
