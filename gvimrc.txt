@@ -30,7 +30,7 @@ set autochdir
 filetype plugin indent on
 
 " Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
-:imap <M-j> <Esc>j
-:imap <M-k> <Esc>k
-:imap <M-l> <Esc>l
+imap <M-j> <Esc>j
+imap <M-k> <Esc>k
+imap <M-l> <Esc>l
 " Note that alt-h already is mapped to the help menu, so we can't fix it
