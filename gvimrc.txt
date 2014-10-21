@@ -17,17 +17,17 @@ endif
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 
-" Set the color scheme
+" Set the color scheme.
 colorscheme default 
 
-"Always view status bar
+" Always view status bar.
 set laststatus=2
-
-"Default working directory to current file
-set autochdir
-
-" Automatically choose indentation based on filetype
-filetype plugin indent on
+" To quote the vim documentation:
+"     The value of this option influences when the last window will have a
+"     status line:
+"       0: never
+"       1: only if there are at least two windows
+"       2: always
 
 " Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
 imap <M-j> <Esc>j

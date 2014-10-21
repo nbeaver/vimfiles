@@ -1,3 +1,18 @@
+" Enable syntax highlighting based on filetype.
 filetype plugin indent on
+
+" Always use syntax highlighting.
 syntax enable
+
+" Automatically work with directory the file is in,
+" not the directory `vim` is invoked from.
 set autochdir
+
+" Make spaces a valid separator in filenames.
+" Affects commands like `gf` and i_Ctrl-X Ctrl-F.
+set isfname+=32
+" Caveat from Vim manual:
+"     Think twice before adding white space to this option.  Although a
+"     space may appear inside a file name, the effect will be that Vim
+"     doesn't know where a file name starts or ends when doing completion.
+"     It most likely works better without a space in 'isfname'.
