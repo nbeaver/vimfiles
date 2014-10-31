@@ -10,7 +10,7 @@ set autochdir
 
 " Make spaces a valid separator in filenames.
 " Affects commands like `gf` and i_Ctrl-X Ctrl-F.
-set isfname+=32
+" set isfname+=32 " turned off for now until I can find a better solution.
 " Caveat from Vim manual:
 "     Think twice before adding white space to this option.  Although a
 "     space may appear inside a file name, the effect will be that Vim
