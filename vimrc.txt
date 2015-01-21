@@ -1,18 +1,32 @@
-" Enable syntax highlighting based on filetype.
 filetype plugin indent on
+" Enable syntax highlighting based on filetype.
 
-" Always use syntax highlighting.
 syntax enable
+" Always use syntax highlighting.
 
+set autochdir
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
-set autochdir
 
+" set isfname+=32 " turned off for now until I can find a better solution.
 " Make spaces a valid separator in filenames.
 " Affects commands like `gf` and i_Ctrl-X Ctrl-F.
-" set isfname+=32 " turned off for now until I can find a better solution.
 " Caveat from Vim manual:
 "     Think twice before adding white space to this option.  Although a
 "     space may appear inside a file name, the effect will be that Vim
 "     doesn't know where a file name starts or ends when doing completion.
 "     It most likely works better without a space in 'isfname'.
+"
+
+set nostartofline
+" Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
+
+autocmd BufNewFile,BufRead *.py set softtabstop=4 shiftwidth=4 expandtab smartindent
+" For some reason, vim's python plugin doesn't use spaces for indentation.
+" http://stackoverflow.com/questions/5998374/if-filetype-tex
+
+" Vim only recognizes *.gpi as gnuplot files by default.
+au BufNewFile,BufRead *.plt setf gnuplot
+au BufNewFile,BufRead *.gnuplot setf gnuplot
+au BufNewFile,BufRead *.gnu setf gnuplot
+au BufNewFile,BufRead *.gp setf gnuplot
