@@ -19,6 +19,9 @@ set autochdir
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
 
+syntax on
+" Enable syntax highlighting.
+
 " set isfname+=32 " turned off for now until I can find a better solution.
 " Make spaces a valid separator in filenames.
 " Affects commands like `gf` and i_Ctrl-X Ctrl-F.
