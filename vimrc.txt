@@ -1,8 +1,19 @@
-filetype plugin indent on
-" Enable syntax highlighting based on filetype.
+" From example .vimrc file at /usr/share/vim/vimcurrent/vimrc_example.vim
 
-syntax enable
-" Always use syntax highlighting.
+set incsearch		" do incremental searching
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+else
+  set autoindent		" always set autoindenting on
+endif
+" =============================================================================
+" My customizations start here.
 
 set autochdir
 " Automatically work with directory the file is in,
@@ -26,7 +37,11 @@ autocmd BufNewFile,BufRead *.py set softtabstop=4 shiftwidth=4 expandtab smartin
 " http://stackoverflow.com/questions/5998374/if-filetype-tex
 
 " Vim only recognizes *.gpi as gnuplot files by default.
-au BufNewFile,BufRead *.plt setf gnuplot
-au BufNewFile,BufRead *.gnuplot setf gnuplot
-au BufNewFile,BufRead *.gnu setf gnuplot
-au BufNewFile,BufRead *.gp setf gnuplot
+autocmd BufNewFile,BufRead *.plt setf gnuplot
+autocmd BufNewFile,BufRead *.gnuplot setf gnuplot
+autocmd BufNewFile,BufRead *.gnu setf gnuplot
+autocmd BufNewFile,BufRead *.gp setf gnuplot
+
+" Open *.vimhelp as vim help files.
+autocmd BufNewFile,BufRead *.vimhelp setf help
+autocmd BufNewFile,BufRead *.vimhelp set iskeyword=!-~,^\*,^\|,^\",192-255
