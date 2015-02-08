@@ -90,3 +90,15 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
+
+" http://mg.pov.lt/vim/vimrc
+
+" When Vim highlights the matching bracket,
+" I have a hard time keeping track of which character the cursor is on.
+highlight MatchParen cterm=bold ctermbg=none ctermfg=none
+" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
+
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
