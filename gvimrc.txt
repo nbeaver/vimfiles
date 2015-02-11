@@ -30,7 +30,7 @@ set laststatus=2
 "       2: always
 
 " Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
-imap <M-j> <Esc>j
-imap <M-k> <Esc>k
-imap <M-l> <Esc>l
+inoremap <M-j> <Esc>j
+inoremap <M-k> <Esc>k
+inoremap <M-l> <Esc>l
 " Note that alt-h already is mapped to the help menu, so we can't fix it

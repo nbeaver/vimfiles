@@ -35,55 +35,63 @@ syntax on
 set nostartofline
 " Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
 
-autocmd BufNewFile,BufRead *.py set softtabstop=4 shiftwidth=4 expandtab smartindent
-" For some reason, vim's python plugin doesn't use spaces for indentation.
-" http://stackoverflow.com/questions/5998374/if-filetype-tex
-
-" Vim only recognizes *.gpi as gnuplot files by default.
-autocmd BufNewFile,BufRead *.plt setf gnuplot
-autocmd BufNewFile,BufRead *.gnuplot setf gnuplot
-autocmd BufNewFile,BufRead *.gnu setf gnuplot
-autocmd BufNewFile,BufRead *.gp setf gnuplot
+if has('autocmd')
+    autocmd BufNewFile,BufRead *.py set softtabstop=4 shiftwidth=4 expandtab smartindent
+    " For some reason, vim's python plugin doesn't use spaces for indentation.
+    " https://www.python.org/dev/peps/pep-0008/#indentation
+    " http://stackoverflow.com/questions/5998374/if-filetype-tex
+    
+    autocmd BufNewFile,BufRead *.sh set softtabstop=4 shiftwidth=4 expandtab smartindent
+    " Do the same indentation for shell scripts.
+    
+    " Vim only recognizes *.gpi as gnuplot files by default.
+    autocmd BufNewFile,BufRead *.plt setf gnuplot
+    autocmd BufNewFile,BufRead *.gnuplot setf gnuplot
+    autocmd BufNewFile,BufRead *.gnu setf gnuplot
+    autocmd BufNewFile,BufRead *.gp setf gnuplot
+endif
 
 " ---------------------- Begin vimhelp file modifications. -------------------
-autocmd BufNewFile,BufRead *.vimhelp set buftype=help
-" This is necessary to follow tags that start with [ and /,
-" e.g. E426: tag not found: \[count]
-" e.g. |/star| jumps to *star*, not */star*.
-" e.g. |/ignorecase| jumps to *'ignorecase'*
-" |/atom| |/bar| |/\bar|
-" but it has some drawbacks, e.g. :help will leave the current buffer,
-" so use :split | :help instead.
-"autocmd BufNewFile,BufRead *.vimhelp cnoremap :help :split\|help TODO: fix this.
-
-let b:did_ftplugin = 1
-" Nasty hack that lets us avoid the side effects of the help filetype plugin,
-" which will somehow be called last by the 'set buftype=help' above.
-" (See /usr/share/vim/vimcurrent/ftplugin/help.vim for the plugin.)
-
-autocmd BufNewFile,BufRead *.vimhelp setlocal iskeyword=!-~,^\*,^\|,^\",192-255
-" Make the keywords match other help files,
-" so tags like |command-mode| don't jump to *:command*
-" and tags like |%| don't throw "E349: No identifier under cursor".
-
-autocmd BufNewFile,BufRead *.vimhelp setlocal noreadonly
-autocmd BufNewFile,BufRead *.vimhelp setlocal modifiable
-" Stop the file from being read-only, which is default for buftype=help.
-
-autocmd BufNewFile,BufRead *.vimhelp setlocal textwidth=0
-autocmd BufNewFile,BufRead *.vimhelp set formatoptions-=tc
-" Prevent autowrapping at 78 characters, which is default for buftype=help.
-
-autocmd BufNewFile,BufRead *.vimhelp highlight link helpStar Type
-" Make the ** characters in a tag target visible.
-
-autocmd BufNewFile,BufRead *.vimhelp highlight link helpBar Type
-" Make the || characters in a tag visible.
-
-autocmd BufNewFile,BufRead *.vimhelp highlight link helpIgnore Type
-" Make the > and < to begin and end examples visible.
-
-" Note: see color with :highlight Type
+if has('autocmd')
+    autocmd BufNewFile,BufRead *.vimhelp set buftype=help
+    " This is necessary to follow tags that start with [ and /,
+    " e.g. E426: tag not found: \[count]
+    " e.g. |/star| jumps to *star*, not */star*.
+    " e.g. |/ignorecase| jumps to *'ignorecase'*
+    " |/atom| |/bar| |/\bar|
+    " but it has some drawbacks, e.g. :help will leave the current buffer,
+    " so use :split | :help instead.
+    "autocmd BufNewFile,BufRead *.vimhelp cnoremap :help :split\|help TODO: fix this.
+    
+    let b:did_ftplugin = 1
+    " Nasty hack that lets us avoid the side effects of the help filetype plugin,
+    " which will somehow be called last by the 'set buftype=help' above.
+    " (See /usr/share/vim/vimcurrent/ftplugin/help.vim for the plugin.)
+    
+    autocmd BufNewFile,BufRead *.vimhelp setlocal iskeyword=!-~,^\*,^\|,^\",192-255
+    " Make the keywords match other help files,
+    " so tags like |command-mode| don't jump to *:command*
+    " and tags like |%| don't throw "E349: No identifier under cursor".
+    
+    autocmd BufNewFile,BufRead *.vimhelp setlocal noreadonly
+    autocmd BufNewFile,BufRead *.vimhelp setlocal modifiable
+    " Stop the file from being read-only, which is default for buftype=help.
+    
+    autocmd BufNewFile,BufRead *.vimhelp setlocal textwidth=0
+    autocmd BufNewFile,BufRead *.vimhelp set formatoptions-=tc
+    " Prevent autowrapping at 78 characters, which is default for buftype=help.
+    
+    autocmd BufNewFile,BufRead *.vimhelp highlight link helpStar Type
+    " Make the ** characters in a tag target visible.
+    
+    autocmd BufNewFile,BufRead *.vimhelp highlight link helpBar Type
+    " Make the || characters in a tag visible.
+    
+    autocmd BufNewFile,BufRead *.vimhelp highlight link helpIgnore Type
+    " Make the > and < to begin and end examples visible.
+    
+    " Note: see color with :highlight Type
+endif
 " ---------------------- End vimhelp file modifications. ---------------------
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -98,7 +106,10 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 
+" Automatically source .vimrc when writing this file.
+" 'the grouping of autocommand is here to avoid "exponential" reloading if you save several times your configuration.'
 augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+    autocmd!
+    autocmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc source $MYVIMRC | if has('gui_running') | source $MYGVIMRC | endif
 augroup END
+" https://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2403926#2403926
