@@ -1,20 +1,3 @@
-" From example .vimrc file at /usr/share/vim/vimcurrent/vimrc_example.vim
-
-set incsearch		" do incremental searching
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-else
-  set autoindent		" always set autoindenting on
-endif
-" =============================================================================
-" My customizations start here.
-
 set autochdir
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
@@ -22,18 +5,12 @@ set autochdir
 syntax on
 " Always enable syntax highlighting.
 
-" set isfname+=32 " turned off for now until I can find a better solution.
-" Make spaces a valid separator in filenames.
-" Affects commands like `gf` and i_Ctrl-X Ctrl-F.
-" Caveat from Vim manual:
-"     Think twice before adding white space to this option.  Although a
-"     space may appear inside a file name, the effect will be that Vim
-"     doesn't know where a file name starts or ends when doing completion.
-"     It most likely works better without a space in 'isfname'.
-"
-
 set nostartofline
 " Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
+
+if has('autocmd')
+    filetype plugin indent on
+endif
 
 if has('autocmd')
     autocmd BufNewFile,BufRead *.py set softtabstop=4 shiftwidth=4 expandtab smartindent
@@ -44,6 +21,11 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.sh set softtabstop=4 shiftwidth=4 expandtab smartindent
     " Do the same indentation for shell scripts.
     
+    autocmd BufNewFile,BufRead *.js set autoindent expandtab shiftwidth=2 softtabstop=2
+    " Indent Javascript 2 spaces.
+    " smartindent and cindent always do 4 spaces.
+    " http://atroche.org/post/30994290348/javascript-indentation
+
     " Vim only recognizes *.gpi as gnuplot files by default.
     autocmd BufNewFile,BufRead *.plt setf gnuplot
     autocmd BufNewFile,BufRead *.gnuplot setf gnuplot
@@ -99,17 +81,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
 
-" http://mg.pov.lt/vim/vimrc
-
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
-
-" Automatically source .vimrc when writing this file.
-" 'the grouping of autocommand is here to avoid "exponential" reloading if you save several times your configuration.'
-augroup myvimrc
-    autocmd!
-    autocmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc source $MYVIMRC | if has('gui_running') | source $MYGVIMRC | endif
-augroup END
-" https://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2403926#2403926
