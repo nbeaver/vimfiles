@@ -1,10 +1,11 @@
+set incsearch
+" Turn on incremental search.
+
 set autochdir
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
 
 syntax on
-" Always enable syntax highlighting.
-
 set nostartofline
 " Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
 
