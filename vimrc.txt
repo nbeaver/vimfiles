@@ -1,33 +1,36 @@
-set incsearch
 " Turn on incremental search.
+if has('extra_search')
+    set incsearch
+endif
 
-set autochdir
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
+if exists("+autochdir")
+    set autochdir
+endif
 
-syntax on
-set nostartofline
+" Turn on syntax highlighting.
+if has('syntax')
+    syntax on
+endif
+
 " Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
+set nostartofline
 
+" By default, use four spaces as indentation.
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+" Use plugins for filetype,
+" which may override the indentation settings.
+" Important for e.g. Makefiles that must use hard tabs.
 if has('autocmd')
     filetype plugin indent on
 endif
 
+" Vim only recognizes *.gpi as gnuplot files by default.
 if has('autocmd')
-    autocmd BufNewFile,BufRead *.py set softtabstop=4 shiftwidth=4 expandtab smartindent
-    " For some reason, vim's python plugin doesn't use spaces for indentation.
-    " https://www.python.org/dev/peps/pep-0008/#indentation
-    " http://stackoverflow.com/questions/5998374/if-filetype-tex
-    
-    autocmd BufNewFile,BufRead *.sh set softtabstop=4 shiftwidth=4 expandtab smartindent
-    " Do the same indentation for shell scripts.
-    
-    autocmd BufNewFile,BufRead *.js set autoindent expandtab shiftwidth=2 softtabstop=2
-    " Indent Javascript 2 spaces.
-    " smartindent and cindent always do 4 spaces.
-    " http://atroche.org/post/30994290348/javascript-indentation
-
-    " Vim only recognizes *.gpi as gnuplot files by default.
     autocmd BufNewFile,BufRead *.plt setf gnuplot
     autocmd BufNewFile,BufRead *.gnuplot setf gnuplot
     autocmd BufNewFile,BufRead *.gnu setf gnuplot
@@ -39,3 +42,5 @@ endif
 " I have a hard time keeping track of which character the cursor is on.
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
+
+" TODO Make # and * work in visual mode.
