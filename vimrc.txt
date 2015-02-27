@@ -17,6 +17,11 @@ endif
 " Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
 set nostartofline
 
+" Save an undo file to disk.
+if exists("+persistent_undo")
+    set undofile
+endif
+
 " By default, use four spaces as indentation.
 set expandtab
 set shiftwidth=4
