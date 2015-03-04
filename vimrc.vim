@@ -49,3 +49,4 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 
 " TODO Make # and * work in visual mode.
+" TODO Does pasting indented code work?
