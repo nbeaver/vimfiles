@@ -1,6 +1,7 @@
 " Turn on incremental search.
 if has('extra_search')
     set incsearch
+    set hlsearch
 endif
 
 " Automatically work with directory the file is in,
