@@ -4,6 +4,11 @@ if has('extra_search')
     set hlsearch
 endif
 
+" Highlight search is cool,
+" but it can be distracting,
+" so it's nice to clear the highlighting register.
+command ClearSearch let @/ = ""
+
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
 if exists("+autochdir")
@@ -43,11 +48,12 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.gp setf gnuplot
 endif
 
-
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
+
+command WriteMake write | make
 
 " TODO Make # and * work in visual mode.
 " TODO Does pasting indented code work?
