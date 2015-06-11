@@ -55,5 +55,14 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 
 command WriteMake write | make
 
+command DateInsert put=strftime('%F')
+
+command CopyPath let @+=expand("%:p:~")
+
+" Automatically save all files when Vim loses focus.
+autocmd FocusLost * silent! wall
+" The * is for all files (not just e.g. *.txt),
+" and silent! is for unsaved buffers.
+" http://ideasintosoftware.com/vim-productivity-tips/
+
 " TODO Make # and * work in visual mode.
-" TODO Does pasting indented code work?
