@@ -65,4 +65,6 @@ autocmd FocusLost * silent! wall
 " and silent! is for unsaved buffers.
 " http://ideasintosoftware.com/vim-productivity-tips/
 
+nnoremap <F5> :w\|make<CR>
+
 " TODO Make # and * work in visual mode.
