@@ -67,4 +67,7 @@ autocmd FocusLost * silent! wall
 
 nnoremap <F5> :w\|make<CR>
 
-" TODO Make # and * work in visual mode.
+" Make # and * work in visual mode.
+vnoremap * y/<C-R>"<CR>
+vnoremap # y?<C-R>"<CR>
+" Based on http://vim.wikia.com/wiki/Search_for_visually_selected_text
