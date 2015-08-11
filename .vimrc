@@ -59,12 +59,6 @@ command DateInsert put=strftime('%F')
 
 command CopyPath let @+=expand("%:p:~")
 
-" Automatically save all files when Vim loses focus.
-autocmd FocusLost * silent! wall
-" The * is for all files (not just e.g. *.txt),
-" and silent! is for unsaved buffers.
-" http://ideasintosoftware.com/vim-productivity-tips/
-
 nnoremap <F5> :w\|make<CR>
 
 " Make # and * work in visual mode.
