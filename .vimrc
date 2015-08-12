@@ -66,8 +66,11 @@ vnoremap * y/<C-R>"<CR>
 vnoremap # y?<C-R>"<CR>
 " Based on http://vim.wikia.com/wiki/Search_for_visually_selected_text
 
-" Automatically write the current file if the cursor isn't moved for a while.
-autocmd CursorHold * :update
+" Automatically write the current file
+" if the cursor isn't moved for a while.
+if has('autocmd') && filewritable(@%) == 1
+    autocmd CursorHold * update
+endif
 
 " Use the system clipboard (no more "+p for me!)
 set clipboard=unnamedplus
