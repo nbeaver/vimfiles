@@ -73,4 +73,4 @@ if has('autocmd') && filewritable(@%) == 1
 endif
 
 " Use the system clipboard (no more "+p for me!)
-set clipboard=unnamedplus
+set clipboard=unnamed
