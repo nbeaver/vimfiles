@@ -68,8 +68,8 @@ vnoremap # y?<C-R>"<CR>
 
 " Automatically write the current file
 " if the cursor isn't moved for a while.
-if has('autocmd') && filewritable(@%) == 1
-    autocmd CursorHold * update
+if has('autocmd')
+    autocmd CursorHold * if filewritable(@%) == 1 | :update | endif
 endif
 
 " Use the system clipboard (no more "+p for me!)
