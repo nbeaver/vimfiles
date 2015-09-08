@@ -70,7 +70,7 @@ if exists("*strftime")
     command DateInsert put=strftime('%F')
 endif
 
-command CopyPath let @+=expand("%:p:~")
+command CopyPath let @*=expand("%:p:~")
 
 nnoremap <F5> :w\|make<CR>
 
