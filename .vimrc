@@ -1,4 +1,4 @@
-" Turn on incremental search.
+" Turn on incremental search and search highlighting.
 if has('extra_search')
     set incsearch
     set hlsearch
