@@ -94,6 +94,7 @@ nnoremap <F5> :w\|make<CR>
 vnoremap * y/<C-R>"<CR>
 vnoremap # y?<C-R>"<CR>
 " Based on http://vim.wikia.com/wiki/Search_for_visually_selected_text
+" Warning: does not escape regular expression characters such as [ ].
 
 " Automatically write the current file
 " if the cursor isn't moved for a while.
@@ -101,5 +102,5 @@ if has('autocmd')
     autocmd CursorHold * if filewritable(@%) == 1 | :update | endif
 endif
 
-" Use the system clipboard (no more "+p for me!)
+" Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
