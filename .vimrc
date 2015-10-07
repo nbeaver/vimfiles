@@ -104,3 +104,9 @@ endif
 
 " Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
+
+" Teach myself good habits,
+" like using Alt-l to leave escape mode,
+" not Alt-j or Alt-k.
+inoremap <Esc>j <Nop>
+inoremap <Esc>k <Nop>
