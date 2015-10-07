@@ -59,21 +59,6 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.gp setf gnuplot
 endif
 
-augroup shellscripts
-    " prevent duplicates if .vimrc is sourced twice.
-    autocmd!
-
-    " tell Vim where the dictionary is
-    autocmd FileType sh setlocal complete+=k~/.cache/vim/shellcmds.txt dictionary=~/.cache/vim/shellcmds.txt
-
-    " completions for hyphenated commands
-    autocmd FileType sh setlocal iskeyword+=-
-
-    " generate the dictionary
-    autocmd FileType sh call system("compgen -c > ~/.cache/vim/shellcmds.txt")
-augroup END
-" https://vi.stackexchange.com/questions/4805/insert-mode-completion-of-executables-in-path-like-compgen-c/
-" TODO: aliases and shell functions in a separate file?
 
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
