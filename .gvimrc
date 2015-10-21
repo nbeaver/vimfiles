@@ -13,10 +13,6 @@ if has("gui_running")
   endif
 endif
 
-"Map to visual lines instead of physical lines
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
-
 " Set the color scheme.
 colorscheme default 
 
