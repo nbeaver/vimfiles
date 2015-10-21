@@ -23,6 +23,9 @@ endif
 " Prevent vim from jumping to the start of line when using e.g. Ctrl-F or G
 set nostartofline
 
+" Show the partially entered commands on the bottom-right.
+set showcmd
+
 " Save an undo file to disk.
 if exists("+persistent_undo")
     set undofile
