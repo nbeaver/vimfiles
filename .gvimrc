@@ -25,7 +25,11 @@ set laststatus=2
 "       1: only if there are at least two windows
 "       2: always
 
-" Make alt-l change modes to escape, like in a terminal.
+" Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
+inoremap <M-j> <Esc>j
+inoremap <M-k> <Esc>k
 inoremap <M-l> <Esc>l
+cnoremap <M-j> <Esc>j
+cnoremap <M-k> <Esc>k
 cnoremap <M-l> <Esc>l
 " Note that alt-h already is mapped to the help menu, so we can't fix it
