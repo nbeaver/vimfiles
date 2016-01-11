@@ -93,8 +93,6 @@ endif
 " Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
 
-source ~/src/vimscript/good-habits/good-habits.vim
-
 " Open URLs in the user's preferred application,
 " not desktop-specific URL handles like
 " gnome-open, exo-open, or kioclient.
