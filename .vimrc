@@ -70,6 +70,8 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 
 command WriteMake write | make
 
+command FindUnicode /[^\d0-\d127]
+
 if exists("*strftime")
     command DateInsert put=strftime('%F')
 endif
