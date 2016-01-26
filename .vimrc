@@ -8,9 +8,7 @@ endif
 " but it can be distracting,
 " so it's nice to clear the highlighting register.
 
-if !exists(":WriteMake")
-    command ClearSearch let @/ = ""
-endif
+command! ClearSearch let @/ = ""
 
 " Automatically work with directory the file is in,
 " not the directory `vim` is invoked from.
@@ -71,21 +69,15 @@ endif
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 
-if !exists(":WriteMake")
-    command WriteMake write | make
+command! WriteMake write | make
+
+command! FindUnicode /[^\d0-\d127]
+
+if exists("*strftime")
+    command! DateInsert put=strftime('%F')
 endif
 
-if !exists(":FindUnicode")
-    command FindUnicode /[^\d0-\d127]
-endif
-
-if exists("*strftime") && !exists(":DateInsert")
-    command DateInsert put=strftime('%F')
-endif
-
-if !exists(":CopyPath")
-    command CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
-endif
+command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
 
 nnoremap <F5> :w\|make<CR>
 
