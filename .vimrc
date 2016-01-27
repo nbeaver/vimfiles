@@ -93,4 +93,9 @@ set clipboard=unnamed
 " Open URLs in the user's preferred application,
 " not desktop-specific URL handles like
 " gnome-open, exo-open, or kioclient.
-:let g:netrw_browsex_viewer= "xdg-open"
+let g:netrw_browsex_viewer = "xdg-open"
+
+" Use whole "words" when opening URLs.
+" This avoids cutting off parameters (after '?') and anchors (after '#').
+" See http://vi.stackexchange.com/q/2801/1631
+let g:netrw_gx="<cWORD>"
