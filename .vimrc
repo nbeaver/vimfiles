@@ -81,12 +81,6 @@ command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
 
 nnoremap <F5> :w\|make<CR>
 
-" Make # and * work in visual mode.
-vnoremap * y/<C-R>"<CR>
-vnoremap # y?<C-R>"<CR>
-" Based on http://vim.wikia.com/wiki/Search_for_visually_selected_text
-" Warning: does not escape regular expression characters such as [ ].
-
 " Automatically write the current file
 " if the cursor isn't moved for a while.
 if has('autocmd')
