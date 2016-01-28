@@ -99,3 +99,9 @@ let g:netrw_browsex_viewer = "sensible-browser"
 " This avoids cutting off parameters (after '?') and anchors (after '#').
 " See http://vi.stackexchange.com/q/2801/1631
 let g:netrw_gx="<cWORD>"
+
+" Swap words, like Emacs' M-t.
+nmap gl :s,\v(\w+)(\W*%#\W*)(\w+),\3\2\1\r,<CR>kgJ:nohl<CR>
+" https://stackoverflow.com/questions/141372/how-to-emulate-emacs-transpose-words-in-vim
+" Similar ideas:
+" http://vim.wikia.com/wiki/VimTip47
