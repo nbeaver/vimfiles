@@ -44,16 +44,6 @@ if has('autocmd')
     filetype plugin indent on
 endif
 
-" From the documentation,
-" a 'minimal language-sensitive completion'.
-" /usr/share/vim/vim74/doc/insert.txt
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-                \	if &omnifunc == "" |
-                \		setlocal omnifunc=syntaxcomplete#Complete |
-                \	endif
-endif
-
 
 " Vim only recognizes *.gpi as gnuplot files by default.
 if has('autocmd')
