@@ -100,3 +100,5 @@ nmap gl :s,\v(\w+)(\W*%#\W*)(\w+),\3\2\1\r,<CR>kgJ:nohl<CR>
 " https://stackoverflow.com/questions/141372/how-to-emulate-emacs-transpose-words-in-vim
 " Similar ideas:
 " http://vim.wikia.com/wiki/VimTip47
+
+set secure exrc
