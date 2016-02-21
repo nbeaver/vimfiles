@@ -59,6 +59,8 @@ endif
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 
+" Build shortcuts to write the current file and run 'make'.
+nnoremap <F5> :write\|make<CR>
 command! WriteMake write | make
 
 command! FindUnicode /[^\d0-\d127]
@@ -68,8 +70,6 @@ if exists("*strftime")
 endif
 
 command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
-
-nnoremap <F5> :w\|make<CR>
 
 " Automatically write the current file
 " if the cursor isn't moved for a while.
