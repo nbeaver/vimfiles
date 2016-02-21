@@ -63,6 +63,8 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 nnoremap <F5> :write\|make<CR>
 command! WriteMake write | make
 
+" Do a search for all non-ASCII characters.
+" Especially useful when 'hlsearch' is set.
 command! FindUnicode /[^\d0-\d127]
 
 if exists("*strftime")
