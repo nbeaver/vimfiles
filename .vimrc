@@ -67,6 +67,9 @@ command! WriteMake write | make
 " Especially useful when 'hlsearch' is set.
 command! FindUnicode /[^\d0-\d127]
 
+" Escape backslashes on current line.
+command! Backslashify s;\\;\\\\;g
+
 if exists("*strftime")
     command! DateInsert put=strftime('%F')
 endif
