@@ -88,7 +88,9 @@ set clipboard=unnamed
 " Open URLs in the user's preferred application,
 " not desktop-specific URL handles like
 " gnome-open, exo-open, or kioclient.
-let g:netrw_browsex_viewer = "sensible-browser"
+if has('unix') && exists("$DISPLAY")
+    let g:netrw_browsex_viewer = 'xdg-open'
+endif
 
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
