@@ -85,7 +85,8 @@ endif
 " Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
 
-" Open URLs in the user's preferred application,
+" Open URLs in the user's preferred application
+" using freedesktop.org xdg-utils package,
 " not desktop-specific URL handles like
 " gnome-open, exo-open, or kioclient.
 if has('unix') && exists("$DISPLAY")
