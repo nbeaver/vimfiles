@@ -33,3 +33,7 @@ cnoremap <M-j> <Esc>j
 cnoremap <M-k> <Esc>k
 cnoremap <M-l> <Esc>l
 " Note that alt-h already is mapped to the help menu, so we can't fix it
+
+if has('unix') && exists("$DISPLAY")
+    let g:netrw_browsex_viewer = 'sensible-browser'
+endif
