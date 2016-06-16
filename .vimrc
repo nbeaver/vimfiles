@@ -104,4 +104,8 @@ nmap gl :s,\v(\w+)(\W*%#\W*)(\w+),\3\2\1\r,<CR>kgJ:nohl<CR>
 " Similar ideas:
 " http://vim.wikia.com/wiki/VimTip47
 
+" Look for ctags in current directory, going up until hitting home.
+set tags=./tags,tags;$HOME
+" http://stackoverflow.com/questions/11975316/vim-ctags-tag-not-found
+
 set secure exrc
