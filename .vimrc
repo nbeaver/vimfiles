@@ -103,4 +103,7 @@ nmap gl :s,\v(\w+)(\W*%#\W*)(\w+),\3\2\1\r,<CR>kgJ:nohl<CR>
 set tags=tags,tags;$HOME
 " http://stackoverflow.com/questions/11975316/vim-ctags-tag-not-found
 
+set grepprg=ag\ --vimgrep\ $*
+set grepformat=%f:%l:%c:%m
+
 set secure exrc
