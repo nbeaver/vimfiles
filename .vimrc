@@ -32,11 +32,6 @@ if exists("+persistent_undo")
     set undofile
 endif
 
-" By default, use four spaces as indentation.
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-
 " Use plugins for filetype,
 " which may override the indentation settings.
 " Important for e.g. Makefiles that must use hard tabs.
