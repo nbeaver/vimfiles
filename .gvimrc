@@ -1,15 +1,15 @@
 " http://www.linuxdocs.org/HOWTOs/Vim-HOWTO-3.html
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Ubuntu\ Mono\ 10
+    set guifont=Ubuntu\ Mono\ 12
   elseif has("gui_photon")
-    set guifont=Ubuntu \ Mono:s10
+    set guifont=Ubuntu \ Mono:s12
   elseif has("gui_kde")
-    set guifont=Ubuntu\ Mono/10/-1/5/50/0/0/0/1/0
+    set guifont=Ubuntu\ Mono/12/-1/5/50/0/0/0/1/0
   elseif has("x11")
     set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
   else
-    set guifont=Ubuntu_Mono:h10:cDEFAULT
+    set guifont=Ubuntu_Mono:h12:cDEFAULT
   endif
 endif
 
