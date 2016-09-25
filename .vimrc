@@ -10,12 +10,6 @@ endif
 
 command! ClearSearch let @/ = ""
 
-" Automatically work with directory the file is in,
-" not the directory `vim` is invoked from.
-if exists("+autochdir")
-    set autochdir
-endif
-
 " Turn on syntax highlighting.
 if has('syntax')
     syntax on
