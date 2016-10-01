@@ -1,4 +1,4 @@
 " Use four spaces as indentation.
-set expandtab
-set shiftwidth=4
-set softtabstop=4
+setlocal expandtab
+setlocal shiftwidth=4
+setlocal softtabstop=4
