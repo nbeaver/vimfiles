@@ -30,7 +30,9 @@ endif
 " which may override the indentation settings.
 " Important for e.g. Makefiles that must use hard tabs.
 if has('autocmd')
-    filetype plugin indent on
+    filetype on
+    filetype indent on
+    filetype plugin on
 endif
 
 
