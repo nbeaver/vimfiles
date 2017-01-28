@@ -1,2 +1,2 @@
-shellcmds.txt : Makefile
-	bash compgen.sh > $@
+shellcmds.txt : compgen.sh Makefile
+	bash $< > $@
