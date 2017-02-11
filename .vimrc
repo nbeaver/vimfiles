@@ -44,6 +44,10 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.gp setf gnuplot
 endif
 
+" Read *.texinput as LaTeX files.
+if has('autocmd')
+    autocmd BufNewFile,BufRead *.texinput setf tex
+endif
 
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
