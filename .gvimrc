@@ -26,8 +26,8 @@ set laststatus=2
 "       2: always
 
 " Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
-" Note that alt-h already is mapped to the help menu, so we can't fix it
-let s:chars_to_remap = ['j', 'k', 'l']
+" Note that alt-h already is mapped to the help menu, so we can't fix it.
+let s:chars_to_remap = ['w', 'e', 'u', 'o', 'p', 'j', 'k', 'l', 'b', 'n']
 for s:char in s:chars_to_remap
     execute "inoremap <M-" . s:char . "> <Esc>" . s:char
     execute "cnoremap <M-" . s:char . "> <Esc>" . s:char
