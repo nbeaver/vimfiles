@@ -26,13 +26,14 @@ set laststatus=2
 "       2: always
 
 " Make alt-j, alt-k, and alt-l change modes to escape, like in a terminal.
-inoremap <M-j> <Esc>j
-inoremap <M-k> <Esc>k
-inoremap <M-l> <Esc>l
-cnoremap <M-j> <Esc>j
-cnoremap <M-k> <Esc>k
-cnoremap <M-l> <Esc>l
 " Note that alt-h already is mapped to the help menu, so we can't fix it
+let s:chars_to_remap = ['j', 'k', 'l']
+for s:char in s:chars_to_remap
+    execute "inoremap <M-" . s:char . "> <Esc>" . s:char
+    execute "cnoremap <M-" . s:char . "> <Esc>" . s:char
+endfor
+unlet s:chars_to_remap
+
 
 if has('unix') && exists("$DISPLAY")
     let g:netrw_browsex_viewer = 'sensible-browser'
