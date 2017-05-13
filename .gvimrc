@@ -33,6 +33,7 @@ for s:char in s:chars_to_remap
     execute "cnoremap <M-" . s:char . "> <Esc>" . s:char
 endfor
 unlet s:chars_to_remap
+" https://github.com/neovim/neovim/issues/2088
 
 
 if has('unix') && exists("$DISPLAY")
