@@ -49,6 +49,8 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.texinput setf tex
 endif
 
+
+
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
@@ -70,6 +72,69 @@ if exists("*strftime")
 endif
 
 command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
+
+function! AllCaps()
+	inoremap a A
+	inoremap b B
+	inoremap c C
+	inoremap d D
+	inoremap e E
+	inoremap f F
+	inoremap g G
+	inoremap h H
+	inoremap i I
+	inoremap j J
+	inoremap k K
+	inoremap l L
+	inoremap m M
+	inoremap n N
+	inoremap o O
+	inoremap p P
+	inoremap q Q
+	inoremap r R
+	inoremap s S
+	inoremap t T
+	inoremap u U
+	inoremap v V
+	inoremap w W
+	inoremap x X
+	inoremap y Y
+	inoremap z Z
+endfunction
+
+
+command! AllCaps call AllCaps()
+
+function! NoAllCaps()
+	inoremap a a
+	inoremap b b
+	inoremap c c
+	inoremap d d
+	inoremap e e
+	inoremap f f
+	inoremap g g
+	inoremap h h
+	inoremap i i
+	inoremap j j
+	inoremap k k
+	inoremap l l
+	inoremap m m
+	inoremap n n
+	inoremap o o
+	inoremap p p
+	inoremap q q
+	inoremap r r
+	inoremap s s
+	inoremap t t
+	inoremap u u
+	inoremap v v
+	inoremap w w
+	inoremap x x
+	inoremap y y
+	inoremap z z
+endfunction
+
+command! NoAllCaps call NoAllCaps()
 
 " Automatically write the current file
 " if the cursor isn't moved for a while.
