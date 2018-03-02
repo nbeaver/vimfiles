@@ -177,3 +177,8 @@ filetype off
 set runtimepath+=/usr/share/lilypond/2.18.2/vim/
 filetype on
 syntax on
+
+" Prevent pauses during high disk load.
+set nofsync swapsync=
+" https://lkml.org/lkml/2007/8/4/36
+" https://superuser.com/questions/327868/sync-filesystem-in-background
