@@ -1,0 +1,14 @@
+# Comments and blank lines are allowed.
+
+Makefile
+.gitignore
+
+# Vim swap files.
+\.swp
+# Temp files.
+\.+~
+
+# Version control files.
+\.git
+\.hg
+\.svn
