@@ -8,5 +8,3 @@ setlocal iskeyword+=-
 setlocal expandtab
 setlocal shiftwidth=4
 setlocal softtabstop=4
-
-command! CacheShellCmds call system("compgen -c > ~/.vim/cache/shellcmds.txt")

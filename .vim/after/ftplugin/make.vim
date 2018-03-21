@@ -3,5 +3,3 @@
 setlocal complete+=k~/.vim/cache/shellcmds.txt
 setlocal dictionary=~/.vim/cache/shellcmds.txt
 setlocal iskeyword+=-
-
-command! CacheShellCmds call system("compgen -c > ~/.vim/cache/shellcmds.txt")
