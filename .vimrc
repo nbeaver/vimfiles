@@ -68,6 +68,8 @@ endif
 
 command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
 
+" Caps Lock, but only in insertion mode.
+" https://vi.stackexchange.com/questions/13250/caps-lock-in-insert-mode-only
 function! AllCaps()
 	inoremap a A
 	inoremap b B
