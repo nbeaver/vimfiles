@@ -146,7 +146,7 @@ endif
 
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
-" See http://vi.stackexchange.com/q/2801/1631
+" See https://vi.stackexchange.com/questions/2801/how-can-i-make-gx-recognise-full-urls-in-vim
 let g:netrw_gx="<cWORD>"
 
 " Swap words, like Emacs' M-t.
