@@ -21,11 +21,6 @@ set nostartofline
 " Show the partially entered commands on the bottom-right.
 set showcmd
 
-" Save an undo file to disk.
-if exists("+persistent_undo")
-    set undofile
-endif
-
 " Use plugins for filetype,
 " which may override the indentation settings.
 " Important for e.g. Makefiles that must use hard tabs.
