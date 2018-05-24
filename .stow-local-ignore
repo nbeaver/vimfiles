@@ -2,6 +2,7 @@
 
 Makefile
 .gitignore
+github-url.desktop
 
 # Vim swap files.
 \.swp
