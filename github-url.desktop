@@ -1,6 +1,6 @@
 [Desktop Entry]
-Encoding=UTF-8
-Name=github.com/nbeaver/vim-config
-Type=Link
-URL=https://github.com/nbeaver/vim-config
-Icon=text-html
+Name = github.com/nbeaver/vim-config
+Type = Link
+URL = https://github.com/nbeaver/vim-config
+Icon = text-html
+
