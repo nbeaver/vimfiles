@@ -66,6 +66,7 @@ if exists("*strftime")
     command! DateInsert put=strftime('%F')
 endif
 
+" Can work in terminal, but requires vim.gtk or vim.gtk3.
 command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
 
 " Caps Lock, but only in insertion mode.
