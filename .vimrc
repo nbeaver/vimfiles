@@ -134,6 +134,17 @@ endfunction
 
 command! NoAllCaps call NoAllCaps()
 
+" Dictionary autocomplete
+" https://vim.fandom.com/wiki/Dictionary_completions
+" https://stackoverflow.com/questions/4987163/case-insensitivity-on-autocomplete
+function! DictionaryAutocomplete()
+	set dictionary+=/usr/share/dict/words
+	set complete+=k
+	set ignorecase
+	set infercase
+endfunction
+command! DictionaryAutocomplete call DictionaryAutocomplete()
+
 " Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
 
