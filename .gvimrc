@@ -13,6 +13,9 @@ if has("gui_running")
   else
     set guifont=Ubuntu_Mono:h12:cDEFAULT
   endif
+  " Turn off bell sound.
+  " https://stackoverflow.com/questions/18589352/how-to-disable-vim-bells-sounds
+  autocmd GUIEnter * set vb t_vb=
 endif
 
 " Set the color scheme.
