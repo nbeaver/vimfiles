@@ -102,6 +102,8 @@ endfunction
 
 
 command! AllCaps call AllCaps()
+command! CapitalizeAll call AllCaps()
+command! UppercaseAll call AllCaps()
 
 function! NoAllCaps()
 	inoremap a a
@@ -133,6 +135,8 @@ function! NoAllCaps()
 endfunction
 
 command! NoAllCaps call NoAllCaps()
+command! NoCapitalizeAll call NoAllCaps()
+command! NoUppercaseAll call NoAllCaps()
 
 " Dictionary autocomplete
 " https://vim.fandom.com/wiki/Dictionary_completions
