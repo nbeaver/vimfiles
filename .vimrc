@@ -189,3 +189,8 @@ syntax on
 set nofsync swapsync=
 " https://lkml.org/lkml/2007/8/4/36
 " https://superuser.com/questions/327868/sync-filesystem-in-background
+
+" Centralize swap files in one directory
+" so that e.g. Dropbox doesn't sync them.
+set directory^=$HOME/.vim/swap//
+" https://vi.stackexchange.com/questions/16037/vim-swap-file-best-practices
