@@ -44,7 +44,12 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.texinput setf tex
 endif
 
-
+" Read *.tex as LaTeX files.
+if has('autocmd')
+    autocmd BufNewFile,BufRead *.tex setf tex
+endif
+" https://vi.stackexchange.com/questions/23098/difference-between-tex-and-plaintex-vim-file-type
+" https://superuser.com/questions/208177/vim-and-tex-filetypes-plaintex-vs-tex
 
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
