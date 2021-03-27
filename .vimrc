@@ -194,3 +194,7 @@ syntax on
 set nofsync swapsync=
 " https://lkml.org/lkml/2007/8/4/36
 " https://superuser.com/questions/327868/sync-filesystem-in-background
+
+" Make UTF-8 the default display encoding.
+set encoding=utf-8
+" https://unix.stackexchange.com/questions/23389/how-can-i-set-vims-default-encoding-to-utf-8
