@@ -11,7 +11,7 @@ if has("gui_running")
   elseif has("x11")
     set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
   else
-    set guifont=Ubuntu_Mono:h12:cDEFAULT
+    set guifont=Ubuntu_Mono:h12:cDEFAULT,Consolas:h10:cANSI:qDRAFT
   endif
   " Turn off bell sound.
   " https://stackoverflow.com/questions/18589352/how-to-disable-vim-bells-sounds
