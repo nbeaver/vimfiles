@@ -185,6 +185,9 @@ set grepformat=%f:%l:%c:%m
 
 set secure exrc
 
+" Enable Lilypond vim scripts, e.g.
+" /usr/share/lilypond/2.18.2/vim/ftplugin/lilypond.vim
+" TODO: is there a compatibility symlink so it will work with new versions?
 filetype off
 set runtimepath+=/usr/share/lilypond/2.18.2/vim/
 filetype on
