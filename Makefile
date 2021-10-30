@@ -6,4 +6,8 @@ $(SHELLCMDS) :
 
 .PHONY : install-linux
 install-linux : vimrc gvimrc
-	cp -- $^ $(HOME)/.vim
+	cp -- $^ $(HOME)/.vim/
+
+.PHONY : install-windows
+install-linux : vimrc gvimrc
+	cp -- $^ $(HOME)/vimfiles/
