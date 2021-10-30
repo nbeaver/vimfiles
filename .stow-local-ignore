@@ -14,6 +14,5 @@ link-to-GitHub_-_nbeaver_vim-config__My_vim_configuration._github.com.link.html
 \.hg
 \.svn
 
-# Don't stow these stub files.
-gvimrc
-vimrc
+# Vim history files.
+\.netrwhist
