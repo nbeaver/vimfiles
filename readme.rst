@@ -6,4 +6,4 @@ On Linux, do this::
 On Windows, do this::
 
     $ cd /d %USERPROFILE%
-    $ git clone 'https://gitlab.com/nbeaver/vim-config' 'vimfiles'
+    $ git clone "https://gitlab.com/nbeaver/vim-config" "vimfiles"
