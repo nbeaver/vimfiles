@@ -18,9 +18,6 @@ if has("gui_running")
   autocmd GUIEnter * set vb t_vb=
 endif
 
-" Set the color scheme.
-colorscheme default 
-
 " Always view status bar.
 set laststatus=2
 " To quote the vim documentation:
