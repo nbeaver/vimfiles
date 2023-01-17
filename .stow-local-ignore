@@ -8,7 +8,7 @@ readme.rst
 LICENSE.txt
 
 # Vim swap files.
-\.swp
+.*\.sw.
 # Temp files.
 \.+~
 
