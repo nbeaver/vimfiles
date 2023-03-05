@@ -6,6 +6,8 @@ link-to-GitHub_-_nbeaver_vim-config__My_vim_configuration._github.com.link.html
 link-to-Nathaniel_Beaver___vim-config_GitLab_gitlab.com.link.html
 readme.rst
 LICENSE.txt
+install-from-web.bat
+install-local.bat
 
 # Vim swap files.
 .*\.sw.
