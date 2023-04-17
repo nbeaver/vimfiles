@@ -201,3 +201,18 @@ set nofsync swapsync=
 " Make UTF-8 the default display encoding.
 set encoding=utf-8
 " https://unix.stackexchange.com/questions/23389/how-can-i-set-vims-default-encoding-to-utf-8
+
+" Make backspace work as expected.
+set backspace=indent,eol,start
+" https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+" https://vim.fandom.com/wiki/Backspace_and_delete_problems
+
+" Make alt-j, alt-k, and alt-l change modes to escape, regardless of terminal.
+" Note that alt-h already is mapped to the help menu, so we can't fix it.
+let s:chars_to_remap = ['w', 'e', 'u', 'o', 'p', 'h', 'j', 'k', 'l', 'b', 'n']
+for s:char in s:chars_to_remap
+    execute "inoremap <M-" . s:char . "> <Esc>" . s:char
+    execute "cnoremap <M-" . s:char . "> <Esc>" . s:char
+endfor
+unlet s:chars_to_remap
+" https://github.com/neovim/neovim/issues/2088
