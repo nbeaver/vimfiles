@@ -38,10 +38,6 @@ unlet s:chars_to_remap
 " https://github.com/neovim/neovim/issues/2088
 
 
-if has('unix') && exists("$DISPLAY")
-    let g:netrw_browsex_viewer = 'sensible-browser'
-endif
-
 " Turn off cursor blinking.
 set guicursor+=n-v-c:blinkon0
 " https://vim.fandom.com/wiki/Configuring_the_cursor

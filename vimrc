@@ -161,8 +161,12 @@ set clipboard=unnamed
 " using freedesktop.org xdg-utils package,
 " not desktop-specific URL handles like
 " gnome-open, exo-open, or kioclient.
-if has('unix') && exists("$DISPLAY")
-    let g:netrw_browsex_viewer = 'xdg-open'
+if has('win32unix')
+  let g:netrw_browsex_viewer = 'start'
+elseif has('unix') && exists("$DISPLAY")
+  let g:netrw_browsex_viewer = 'xdg-open'
+elseif has('win32')
+  let g:netrw_browsex_viewer = 'start'
 endif
 
 " Use whole "words" when opening URLs.
