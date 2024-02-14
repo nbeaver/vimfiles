@@ -168,6 +168,11 @@ elseif has('unix') && exists("$DISPLAY")
 elseif has('win32')
   let g:netrw_browsex_viewer = 'start'
 endif
+" https://stackoverflow.com/questions/9458294/open-url-under-cursor-in-vim-with-browser
+
+" Turn off netrw history.
+let g:netrw_dirhistmax = 0
+" https://stackoverflow.com/questions/9850360/what-is-netrwhist
 
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
