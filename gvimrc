@@ -31,8 +31,8 @@ set laststatus=2
 " Note that alt-h already is mapped to the help menu, so we can't fix it.
 let s:chars_to_remap = ['w', 'e', 'u', 'o', 'p', 'j', 'k', 'l', 'b', 'n']
 for s:char in s:chars_to_remap
-    execute "inoremap <M-" . s:char . "> <Esc>" . s:char
-    execute "cnoremap <M-" . s:char . "> <Esc>" . s:char
+  execute "inoremap <M-" . s:char . "> <Esc>" . s:char
+  execute "cnoremap <M-" . s:char . "> <Esc>" . s:char
 endfor
 unlet s:chars_to_remap
 " https://github.com/neovim/neovim/issues/2088
