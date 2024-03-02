@@ -154,6 +154,21 @@ function! DictionaryAutocomplete()
 endfunction
 command! DictionaryAutocomplete call DictionaryAutocomplete()
 
+function! Vimtips()
+  tabnew +source\ ~/archive/2013-spring/projects/software/vim/tweak.vim ~/archive/2013-spring/projects/software/vim/vim-notes.txt
+endfunction
+command! Vimtips call Vimtips()
+
+function! CoolCommands()
+  tabnew  ~/archive/2012-fall/projects/software/shell/cool-commands.sh
+endfunction
+command! CoolCommands call CoolCommands()
+
+function! GitNotes()
+  tabnew ~/archive/2013-spring/projects/software/git/git-notes.sh
+endfunction
+command! GitNotes call GitNotes()
+
 " Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
 
