@@ -51,6 +51,11 @@ endif
 " https://vi.stackexchange.com/questions/23098/difference-between-tex-and-plaintex-vim-file-type
 " https://superuser.com/questions/208177/vim-and-tex-filetypes-plaintex-vs-tex
 
+" Read *.mx3 as Go files.
+if has('autocmd')
+  autocmd BufNewFile,BufRead *.mx3 setfiletype=go
+endif
+
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
