@@ -245,3 +245,9 @@ for s:char in s:chars_to_remap
 endfor
 unlet s:chars_to_remap
 " https://github.com/neovim/neovim/issues/2088
+
+" Add bytes to statusline.
+set statusline+=\ %o/%{line2byte(line('$')+1)-1}
+" o N   Byte number in file of byte under cursor, first byte is 1.
+"       Mnemonic: Offset from start of file (with one added)
+" statusline=%f%h%m%r [%{&ff}] (%{strftime("%H:%M %d/%m/%Y",getftime(expand("%:p")))})%=%l,%c%V %o %P
