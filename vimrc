@@ -250,4 +250,4 @@ unlet s:chars_to_remap
 set statusline+=\ %o/%{line2byte(line('$')+1)-1}
 " o N   Byte number in file of byte under cursor, first byte is 1.
 "       Mnemonic: Offset from start of file (with one added)
-" statusline=%f%h%m%r [%{&ff}] (%{strftime("%H:%M %d/%m/%Y",getftime(expand("%:p")))})%=%l,%c%V %o %P
+" https://stackoverflow.com/questions/67597339/display-total-characters-count-on-vim-statusline
