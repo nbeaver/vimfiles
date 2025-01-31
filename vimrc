@@ -53,7 +53,7 @@ endif
 
 " Read *.mx3 as Go files.
 if has('autocmd')
-  autocmd BufNewFile,BufRead *.mx3 setfiletype=go
+  autocmd BufNewFile,BufRead *.mx3 setfiletype go
 endif
 
 " When Vim highlights the matching bracket,
