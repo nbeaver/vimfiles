@@ -194,9 +194,10 @@ endif
 let g:netrw_dirhistmax = 0
 " https://stackoverflow.com/questions/9850360/what-is-netrwhist
 
-" Use whole "words" when opening URLs.
+" Use whole "WORDS" (space-delimited) when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
 " See https://vi.stackexchange.com/questions/2801/how-can-i-make-gx-recognise-full-urls-in-vim
+" https://stackoverflow.com/questions/1888321/what-constitutes-a-word-in-vim
 let g:netrw_gx="<cWORD>"
 
 " Swap words, like Emacs' M-t.
