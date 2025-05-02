@@ -218,8 +218,11 @@ set secure exrc
 " /usr/share/lilypond/2.18.2/vim/ftplugin/lilypond.vim
 " TODO: is there a compatibility symlink so it will work with new versions?
 filetype off
-set runtimepath+=/usr/share/lilypond/2.18.2/vim/
+if isdirectory("/usr/share/lilypond/2.18.2/vim/")
+  set runtimepath+=/usr/share/lilypond/2.18.2/vim/
+endif
 filetype on
+
 syntax on
 
 " Prevent pauses during high disk load.
