@@ -41,3 +41,6 @@ unlet s:chars_to_remap
 " Turn off cursor blinking.
 set guicursor+=n-v-c:blinkon0
 " https://vim.fandom.com/wiki/Configuring_the_cursor
+
+" Turn on ruler.
+set ruler
