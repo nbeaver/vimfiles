@@ -78,6 +78,7 @@ endif
 
 " Can work in terminal, but requires vim.gtk or vim.gtk3.
 command! CopyPath let @*=expand("%:p:~") | let @+=expand("%:p:~")
+command! CopyPathNoTilde let @*=expand("%:p:") | let @+=expand("%:p:")
 
 " Caps Lock, but only in insertion mode.
 " https://vi.stackexchange.com/questions/13250/caps-lock-in-insert-mode-only
