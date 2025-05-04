@@ -1,9 +1,9 @@
 On Linux, do this::
 
     $ cd ~/
-    $ git clone 'https://gitlab.com/nbeaver/vim-config' '.vim'
+    $ git clone 'https://gitlab.com/nbeaver/vimfiles' '.vim'
 
 On Windows, do this::
 
     $ cd /d %USERPROFILE%
-    $ git clone "https://gitlab.com/nbeaver/vim-config" "vimfiles"
+    $ git clone "https://gitlab.com/nbeaver/vimfiles" "vimfiles"
