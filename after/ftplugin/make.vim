@@ -1,6 +1,8 @@
 " https://vi.stackexchange.com/questions/4805/insert-mode-completion-of-executables-in-path-like-compgen-c/
 
-" the k is not a typo:
+" Autocomplete shell commands.
+" The 'k' prefix is not a typo,
+" it means \"scan the files given with the 'dictionary' option.\"
 setlocal complete+=k~/.vim/cache/shellcmds.txt
 " http://vimdoc.sourceforge.net/htmldoc/options.html#'complete'
 
