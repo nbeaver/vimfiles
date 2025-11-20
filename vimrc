@@ -265,3 +265,11 @@ set nrformats-=octal
 " Use bash as default shell for :terminal command.
 set shell=bash
 " https://vi.stackexchange.com/questions/19522/is-it-possible-to-change-the-default-terminal-of-vim
+
+" Default to \n line endings for new files.
+" Note: can still be overriden by specific filetypes.
+setglobal fileformat=unix
+" https://unix.stackexchange.com/questions/44616/why-is-vim-creating-files-with-dos-line-endings
+
+" Detect \n and \r\n line endings when editing existing files.
+setglobal fileformats=unix,dos
