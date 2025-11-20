@@ -256,3 +256,8 @@ set statusline+=\ %o/%{line2byte(line('$')+1)-1}
 " o N   Byte number in file of byte under cursor, first byte is 1.
 "       Mnemonic: Offset from start of file (with one added)
 " https://stackoverflow.com/questions/67597339/display-total-characters-count-on-vim-statusline
+
+" Disable octal to allow increment numbers with zero prefixes,
+" e.g. in filenames.
+set nrformats-=octal
+" https://stackoverflow.com/questions/13273741/why-does-incrementing-with-ctrl-a-in-vim-take-me-from-07-to-10
