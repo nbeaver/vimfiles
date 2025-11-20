@@ -1,3 +1,4 @@
+" LilyPond input files.
 " Use two spaces as indentation.
 setlocal expandtab
 setlocal shiftwidth=2
