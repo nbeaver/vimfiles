@@ -178,19 +178,6 @@ command! GitNotes call GitNotes()
 " Use the system clipboard (no more "*p for me!)
 set clipboard=unnamed
 
-" Open URLs in the user's preferred application
-" using freedesktop.org xdg-utils package,
-" not desktop-specific URL handles like
-" gnome-open, exo-open, or kioclient.
-if has('win32unix')
-  let g:netrw_browsex_viewer = 'start'
-elseif has('unix') && exists("$DISPLAY")
-  let g:netrw_browsex_viewer = 'xdg-open'
-elseif has('win32')
-  let g:netrw_browsex_viewer = 'start'
-endif
-" https://stackoverflow.com/questions/9458294/open-url-under-cursor-in-vim-with-browser
-
 " Turn off netrw history.
 let g:netrw_dirhistmax = 0
 " https://stackoverflow.com/questions/9850360/what-is-netrwhist
