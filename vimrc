@@ -190,7 +190,8 @@ endfunction
 command! GitNotes call GitNotes()
 
 " Use the system clipboard (no more "*p for me!)
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
+" https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
 
 " Turn off netrw history.
 let g:netrw_dirhistmax = 0
