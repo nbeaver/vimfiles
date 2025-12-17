@@ -61,6 +61,20 @@ endif
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 
+" The default colorscheme makes it hard to read text
+" that is being searched for.
+try
+  " Use solarized if it's available.
+  colorscheme solarized
+  catch
+  try
+    " Otherwise use the built-in shine colorscheme.
+    colorscheme shine
+    catch
+  endtry
+endtry
+" https://stackoverflow.com/questions/5698284/in-my-vimrc-how-can-i-check-for-the-existence-of-a-color-scheme
+
 " Build shortcuts to write the current file and run 'make'.
 nnoremap <F5> :write\|make<CR>
 command! WriteMake write | make
