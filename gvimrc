@@ -37,6 +37,17 @@ endfor
 unlet s:chars_to_remap
 " https://github.com/neovim/neovim/issues/2088
 
+" Set the colorscheme differently in gVim than terminal vim.
+try
+  " Use solarized if it's available.
+  colorscheme solarized
+  catch
+  try
+    " Otherwise use the built-in shine colorscheme.
+    catch
+  endtry
+endtry
+" https://stackoverflow.com/questions/5698284/in-my-vimrc-how-can-i-check-for-the-existence-of-a-color-scheme
 
 " Turn off cursor blinking.
 set guicursor+=n-v-c:blinkon0
