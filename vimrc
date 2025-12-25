@@ -10,6 +10,12 @@ endif
 
 command! ClearSearch let @/ = ""
 
+" Disable highlight of matching parentheses / brackets.
+let g:loaded_matchparen = 1
+let loaded_matchparen = 1
+set noshowmatch
+" https://stackoverflow.com/questions/34675677/disable-highlight-matched-parentheses-in-vim-let-loaded-matchparen-1-not-w
+
 " Turn on syntax highlighting.
 if has('syntax')
   syntax on
