@@ -55,3 +55,16 @@ set guicursor+=n-v-c:blinkon0
 
 " Turn on ruler.
 set ruler
+
+command! -nargs=* -complete=shellcmd Terminal call s:Terminal(<q-args>)
+
+function! s:Terminal(args) abort
+  if empty(a:args)
+    execute 'terminal bash'
+  else
+    execute 'terminal ' . a:args
+  endif
+endfunction
+" https://vi.stackexchange.com/questions/19522/is-it-possible-to-change-the-default-terminal-of-vim
+" https://vi.stackexchange.com/questions/16386/how-to-use-wsls-bash-shell-as-default-terminal-of-gvim-windows-10
+" https://vi.stackexchange.com/questions/48440/how-can-i-set-the-default-terminal-shell-to-bash-without-breaking-the-gx-command

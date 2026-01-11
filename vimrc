@@ -271,6 +271,7 @@ set statusline+=\ %o/%{line2byte(line('$')+1)-1}
 set nrformats-=octal
 " https://stackoverflow.com/questions/13273741/why-does-incrementing-with-ctrl-a-in-vim-take-me-from-07-to-10
 
+<<<<<<< HEAD
 " Customized version of :terminal that calls 'bash' if passed without
 " arguments but calls with another shell if passed.
 " Allows us to avoid running this:
@@ -286,6 +287,8 @@ function! s:Terminal(args) abort
     execute 'terminal ' . a:args
   endif
 endfunction
+=======
+>>>>>>> 1779fc7 (Add custom :Terminal command that defaults to bash.)
 
 " Default to \n line endings for new files.
 " Note: can still be overriden by specific filetypes.
