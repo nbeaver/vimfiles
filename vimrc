@@ -261,9 +261,6 @@ set statusline+=\ %o/%{line2byte(line('$')+1)-1}
 set nrformats-=octal
 " https://stackoverflow.com/questions/13273741/why-does-incrementing-with-ctrl-a-in-vim-take-me-from-07-to-10
 
-" Use bash as default shell for :terminal command.
-set shell=bash
-" https://vi.stackexchange.com/questions/19522/is-it-possible-to-change-the-default-terminal-of-vim
 
 " Default to \n line endings for new files.
 " Note: can still be overriden by specific filetypes.
