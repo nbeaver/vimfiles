@@ -231,6 +231,16 @@ set nofsync swapsync=
 " https://lkml.org/lkml/2007/8/4/36
 " https://superuser.com/questions/327868/sync-filesystem-in-background
 
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+" From defaults.vim
+
 " Make UTF-8 the default display encoding.
 set encoding=utf-8
 " https://unix.stackexchange.com/questions/23389/how-can-i-set-vims-default-encoding-to-utf-8
