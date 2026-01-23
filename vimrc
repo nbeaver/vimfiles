@@ -271,9 +271,21 @@ set statusline+=\ %o/%{line2byte(line('$')+1)-1}
 set nrformats-=octal
 " https://stackoverflow.com/questions/13273741/why-does-incrementing-with-ctrl-a-in-vim-take-me-from-07-to-10
 
-" Use bash as default shell for :terminal command.
-set shell=bash
+" Customized version of :terminal that calls 'bash' if passed without
+" arguments but calls with another shell if passed.
+" Allows us to avoid running this:
+" :set shell bash
+" which breaks the `gx' command on Windows.
+" https://vi.stackexchange.com/questions/48440/how-can-i-set-the-default-terminal-shell-to-bash-without-breaking-the-gx-command
 " https://vi.stackexchange.com/questions/19522/is-it-possible-to-change-the-default-terminal-of-vim
+command! -nargs=* -complete=shellcmd Terminal call s:Terminal(<q-args>)
+function! s:Terminal(args) abort
+  if empty(a:args)
+    execute 'terminal bash'
+  else
+    execute 'terminal ' . a:args
+  endif
+endfunction
 
 " Default to \n line endings for new files.
 " Note: can still be overriden by specific filetypes.
