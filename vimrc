@@ -271,14 +271,14 @@ set statusline+=\ %o/%{line2byte(line('$')+1)-1}
 set nrformats-=octal
 " https://stackoverflow.com/questions/13273741/why-does-incrementing-with-ctrl-a-in-vim-take-me-from-07-to-10
 
-<<<<<<< HEAD
 " Customized version of :terminal that calls 'bash' if passed without
 " arguments but calls with another shell if passed.
 " Allows us to avoid running this:
 " :set shell bash
 " which breaks the `gx' command on Windows.
-" https://vi.stackexchange.com/questions/48440/how-can-i-set-the-default-terminal-shell-to-bash-without-breaking-the-gx-command
+" https://vi.stackexchange.com/questions/16386/how-to-use-wsls-bash-shell-as-default-terminal-of-gvim-windows-10
 " https://vi.stackexchange.com/questions/19522/is-it-possible-to-change-the-default-terminal-of-vim
+" https://vi.stackexchange.com/questions/48440/how-can-i-set-the-default-terminal-shell-to-bash-without-breaking-the-gx-command
 command! -nargs=* -complete=shellcmd Terminal call s:Terminal(<q-args>)
 function! s:Terminal(args) abort
   if empty(a:args)
@@ -287,8 +287,7 @@ function! s:Terminal(args) abort
     execute 'terminal ' . a:args
   endif
 endfunction
-=======
->>>>>>> 1779fc7 (Add custom :Terminal command that defaults to bash.)
+
 
 " Default to \n line endings for new files.
 " Note: can still be overriden by specific filetypes.
