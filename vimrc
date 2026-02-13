@@ -62,6 +62,11 @@ if has('autocmd')
   autocmd BufNewFile,BufRead *.mx3 setfiletype go
 endif
 
+" Read *.service as Systemd files.
+if has('autocmd')
+  autocmd BufNewFile,BufRead *.service setfiletype systemd
+endif
+
 " When Vim highlights the matching bracket,
 " I have a hard time keeping track of which character the cursor is on.
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
