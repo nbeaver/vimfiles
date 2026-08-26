@@ -301,3 +301,7 @@ setglobal fileformat=unix
 
 " Detect \n and \r\n line endings when editing existing files.
 setglobal fileformats=unix,dos
+
+" Enable matchit plugin.
+packadd! matchit
+" https://github.com/chrisbra/matchit
